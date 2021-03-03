@@ -1,0 +1,70 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{dialogue}
+\usepackage[strict, autopunct]{csquotes}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage[en-US]{datetime2}
+
+\usepackage{titling}
+
+\input{titleinfo.tex}
+
+\newcommand{\mlatitle}{\noindent\theauthor{}\hspace*{2cm}
+\\\noindent\theprof{}\hspace*{2cm}
+\\\noindent\theclass{}\hspace*{2cm}
+\\\noindent\thedate{}\hspace*{2cm}
+\begin{center}
+\thetitle{}
+\end{center}}
+
+\usepackage[margin=1in, headheight=14.5pt]{geometry}
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhf{}
+\cfoot{\thepage}
+\rhead{\thetitle}
+\lhead{\theauthor}
+\pagestyle{fancy}
+
+\usepackage{sectsty}
+\allsectionsfont{\normalsize\mdseries}
+
+\usepackage{setspace}
+\doublespacing{}
+
+\usepackage{hyperref}
+
+%% bibliography stuff
+\usepackage[
+style=authortitle-terse,
+backend=biber,
+idemtracker=true,
+ibidtracker=true,
+]{biblatex}
+\usepackage{attrib}
+\addbibresource{bib.bib}
+
+\begin{document}
+
+% don't hyphenate or fill lines
+\raggedright
+
+% MLA indent is half an inch. this goes after \raggedright because \raggedright alters it.
+\setlength{\parindent}{0.5in}
+
+% no header on first page
+\thispagestyle{plain}
+
+\mlatitle{}
+
+% MLA indents the first paragraph
+\indent
+\input{paper.tex}
+
+\nocite{*}
+
+\printbibliography{}
+
+\end{document}
