@@ -1,6 +1,6 @@
 TeX ?= xelatex -interaction=nonstopmode
 MYNAME ?= Phoebe_Goldman
-ASSIGNMENT ?= FIXME_ASSIGNMENT_NAME
+ASSIGNMENT ?= Final_Paper
 JOBNAME := $(MYNAME)_$(ASSIGNMENT)
 
 $(JOBNAME).pdf: main.tex *.tex bib.bib

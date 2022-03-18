@@ -45,6 +45,10 @@ ibidtracker=true,
 ]{biblatex}
 \usepackage{attrib}
 \addbibresource{bib.bib}
+\DeclareFieldFormat{postnote}{#1}
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+
+\usepackage{newtxtext}
 
 \begin{document}
 
@@ -63,6 +67,7 @@ ibidtracker=true,
 \indent
 \input{paper.tex}
 
+\clearpage{}
 \nocite{*}
 
 \printbibliography{}
