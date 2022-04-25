@@ -1,1 +1,255 @@
-% FIXME write your paper here
+\newcommand{\theplay}{\textit{Oedipus Tyrannus}}%
+\newcommand{\thegame}{\textit{Oedipus Text} (working title)}%
+% \section*{Background}
+
+% \subsection*{The source text}
+
+\theplay{} is the most widely-read and widely-known of the Greek tragedies. In
+\textit{Poetics}, Aristotle lifts it up as the epitome of the form. \footnote{Why
+  Aristotle chooses \theplay{} as the greatest tragedy, why he chooses tragedy as the
+  greatest medium, and how \theplay{} compares in form and content to other Greek tragedies
+  are all questions for another day; In this project I am concerned only with the fact
+  that \theplay{} is, for all intents and purposes, the canonical Greek tragedy.} Because it
+is widely taught and widely referenced in later culture and media, \theplay{} presents a
+relatively accessible first source text for a new mode of presenting Greek tragedy.
+
+Sophocles' text is quite deep, and adaptors must select from among its themes and facets
+what to focus on. In descending order of my interest, I will engage with:
+
+\paragraph*{The tension between destiny and self-determination.} Is the oracle's prophecy
+inevitable, or could Oedipus have taken a different path? This is complicated by the
+dramatic form; the script written by Sophocles acts as its own prophecy, and no matter how
+many times \theplay{} is re-enacted onstage, the outcome will be the same.
+  
+\paragraph*{Rage inhibiting rational decision-making,} or the tension between Freud's
+\textit{it} and \textit{I}. The \textit{hamartia} which sets the tragedy in motion and
+ensures the prophecy is Oedipus' loss of self-control when provoked at the
+crossroads. Could another man have kept their cool in that moment? This is again
+complicated by the nature of the play; Oedipus has to lose control in that moment and kill
+Laius, or else there is no story for Sophocles to tell.
+  
+\paragraph*{Fitness to rule and a monarch's responsibility to their title.} I investigated
+this theme in detail in my paper \enquote{Body and the state: Illness in \textit{Oedipus
+    Tyrannus} and \textit{King Lear}}, but in short, Oedipus is a good guy whose only flaw
+is his tendency to lose control of his rage when provoked. His temper is certainly not a
+good thing, but it's fundamentally understandable, and well within the bounds of normal
+behavior for a classical Greek nobleman. But still, as \theplay{} shows us, it makes him
+unfit to rule Thebes. If a wise, caring, righteous man whose reactions to stressful
+circumstances are within social norms is not a fit monarch, is anyone?  \footnote{Spoiler
+  for my paper: no, no individual is fit to rule a society.}
+
+% \subsection*{Interactive Fiction}
+
+\paragraph*{Choose-your-own-adventure games} are a genre of Interactive Fiction (IF), or
+text-based computer games. Classic IF games like \textit{Zork} used a user-interaction
+model where the player typed commands, like \texttt{open door}, \texttt{walk north} or
+\texttt{take key}. I feel a certain nostalgia for these games \footnote{Despite having
+  been born long after their time\ldots{}}, but they're often frustrating, as the player
+has no way of knowing what commands the game will accept. The genre is also known for
+oblique puzzles, which I believe tend to distract from the narrative.
+
+More modern narrative text-based games tend instead to use the Choose-Your-Own-Adventure
+(CHYOA) model, where relatively long blocks of text are separated by points of
+interaction. I will call these points of interaction \enquote{dilemmas,} though that term
+is not in the common parlance. At each dilemma, the player chooses between a small number
+of options offered by the writer. Subsequent blocks of text then reflect the player's
+choice.
+
+When developing CHYOA games, writers are faced with a trade-off between player agency and
+implementation effort. On the one hand, the whole point of interactive fiction is to allow
+the reader to influence the outcome of the story. Players tend to desire a relative
+frequency of dilemmas and a relative abundance of options, and for choices which lead to
+meaningfully different outcomes. If a writer's goal was just to tell a singular story that
+followed a particular path and ended in a predetermined way, they would eschew the
+interactive element and write a traditional narrative in one of the many modes available.
+
+On the other hand, currently extant tools for writing CHYOA games require that the writer
+enumerate all possible choices and write the text for all possible outcomes. This is, to
+put it lightly, a lot of work. And writers who invest too much effort in offering many
+options which lead to diverse outcomes will find that each of those outcomes is less
+polished than if they had focused on a smaller number of better-developed paths. Also,
+players will often explore only a single path; the prospect of writing one hundred words
+of which each reader will experience only ten is creatively unsatisfying.
+
+All narrative computer games grapple with this tension to some extent. \textit{Mass Effect
+  3}, the final entry in a high-budget trilogy of role-playing shooter games which
+advertised the player's influence over the story, was famously criticized because all
+paths converged on similar endings. \textit{Katana Zero}, an independent hack-and-slash
+Vietnam War allegory, explored the tension by forcing players to choose between a
+\enquote{good} ending which ended the game immediately and a \enquote{bad} ending which
+featured significantly more content, at the cost of making the player feel guilty for
+actively continuing the game's violence. But the problem is most pronounced in CHYOAs due
+to their lack of any gameplay beyond the story. \textit{Black Mirror: Bandersnatch},
+Netflix's thoroughly metatextual CHYOA film about the developer of a CHYOA game, is
+explicit in its attempt to grapple with the problem.
+
+% \section*{Motivation}
+
+An adaptation of \theplay{} as a CHYOA game provides a unique opportunity to wed
+Sophocles' tension between self-determination and fate with the CHYOA writer's tension
+between branching paths and finite scope. To that end, I propose \thegame{}. As my first
+adaptation of a Greek tragedy into this mode, and, to the best of my knowledge, the first
+explicit adaptation of a classical text as a computer game, \thegame{} will necessarily
+also serve as a design manifesto.
+
+% \section*{Design}
+
+\newcommand{\selfcontrol}{\texttt{\textsc{Self Control}}}
+
+\newcommand{\knowledge}{\texttt{\textsc{Knowledge}}}
+
+\paragraph*{\thegame{} will be a mystery, where the player attempts to assemble enough
+  \knowledge{} to discover the cause of the plague.} As the player traverses the story,
+they will uncover facts, which will appear in their inventory. For example, during their
+interview with the shepherd, the player will learn \texttt{Laius and Jocasta birthed a
+  son, but ordered it put to death by leaving it on a hillside}. Further investigating the
+shepherd will add, \texttt{Laius and Jocasta's baby was not put to death, but handed off
+  to a Corinthian}. Not all facts will be reliable, and incorrect facts may at times be
+replaced with corrected versions; \texttt{I am Oedipus, son of Polybus and Merope, prince
+  of Corinth} will eventually be replaced with \texttt{Polybus and Merope adopted me and
+  raised me as their son}, and \texttt{Laius was killed by a band of thieves. Plural} with
+\texttt{Laius was killed by a lone traveler}.
+
+Completing the game will require the player to accrue enough \knowledge{} to
+incontrovertibly prove that Oedipus is the son of Laius and Jocasta and the killer of
+Laius.
+
+\paragraph*{The core mechanic of \thegame{} will be \selfcontrol{}, } a finite resource
+which can be spent to make better choices. In the first draft of the game, it is
+described,
+
+\newcommand{\gamequote}[1]{
+  \begin{minipage}[t]{0.8\linewidth}
+    \texttt{#1}
+  \end{minipage}
+  \vspace{\baselineskip}
+}
+
+\gamequote{\textsc{Self Control} quantifies your ability to suppress your impulses and
+  make good choices. Spend it wisely; fighting your nature and controlling your urges is
+  stressful. If you lose your \textsc{Self Control}, you may find yourself making
+  impulsive choices you'll end up regretting.}
+
+At each dilemma, some number of options will be available which do not cost any
+\selfcontrol{}. These will tend to be more impulsive actions. Some number of options will
+also be available which cost various amounts of \selfcontrol{}. These will tend to be more
+rational, thought-out actions.
+
+Consider as an example the scene where Creon warns Oedipus to believe Tiresias and not to
+act impulsively. \footnote{I have not written this scene yet, so what follows is far from
+  final.} The player would then face a dilemma with two available options:
+
+\begin{enumerate}
+\item At no cost in \selfcontrol{}, the player could re-enact Sophocles' text by choosing
+  to yell at Creon and threaten him with exile.
+\item In exchange for one \selfcontrol{}, the player could accept Creon's critique
+  graciously and apologize to Tiresias. This would have some yet-undetermined benefit to
+  the player, possibly granting them a piece of \knowledge{} which would aid them in
+  decoding the mystery.
+\end{enumerate}
+
+Crucially, the player's supply of \selfcontrol{} will be constrained such that it is
+impossible to reach any ending except the one we know and love from the myth, the poetry
+and \theplay{}. Key pieces of \knowledge{}, which, when combined, could lead Oedipus down
+a better path, will be strategically locked behind options which, in total, consume more
+\selfcontrol{} than the player has access to. This way, players who revisit to \thegame{}
+and make different choices in search of a better ending will find that Oedipus' rage
+prevents them from doing so.
+
+At key story-defining moments, most notably killing Laius, the player will be presented
+with options which cost more \selfcontrol{} than the player's entire reserve. These
+moments will always be associated with an injury to Oedipus' feet. The player will
+understand that Oedipus' (shame about) his disability
+
+\paragraph*{In order to serve its goals as an exemplar of its new mode,} \thegame{} will
+be fiercely and unapologetically metatextual. In addition to narration which will not be
+attributed to any speaker, the text will feature design notes in the form of dialogue
+attributed to myself, \texttt{phoebe}. In these moments, I will describe to the player my
+design choices and intentions, instruct the player as to the game's mechanics and how to
+interact with them, and explain background information about the setting. When Oedipus is
+crowned Tyrant of Thebes, for example, the player is offered an opportunity to object,
+\texttt{Wait, tyrants are bad. I don't want to be a tyrant. Can't I be the King of
+  Thebes?} If they do, I respond,
+
+\gamequote{\textsc{phoebe}:
+  \begin{minipage}[t]{0.8\linewidth}
+    Great question! Tough to answer without a lesson in classical Greek civics, and I
+    don't want to get to bogged down in that. But short answer: no, tyrants aren't
+    bad. Well, maybe they are, but the Greeks haven't caught on to that yet. In this
+    world, a tyrant is someone who takes rulership of a city through might, or through
+    cunning, or popular support, or who steps up to lead the people through a crisis. Like
+    you did with the Sphinx. A king, on the other hand, is someone who inherits rule from
+    their father, or who is appointed by the gods. If you had been the son of Laius, you
+    would've inherited kingship of Thebes; but you got the throne in a crisis, so you're a
+    tyrant.
+\end{minipage}}
+
+From there, if they player has not yet uncovered the truth of their parentage, they may
+say, \texttt{I wish I was Laius' son. Then I'd be a real king,} to which I reply,
+\texttt{Yeah, too bad, huh? If only.} If the player does know that Oedipus is the son of
+Laius, then they may instead say, \texttt{But wait, I am the son of Laius!} to which I
+reply, \texttt{Isn't that ironic?}
+
+\paragraph*{The plot of \thegame{}} will be expanded in scope relative to \theplay{}, in
+an effort to expose more of Oedipus' backstory and character. This feels like an obvious
+choice, as narrative prose is not subject to the same forces which incentivize drama
+towards smaller scopes and shorter plots. \footnote{I generally think Aristotle is right
+  that tragedies (and all plays) should be small in scope, but that's neither here nor
+  there.} In service of allowing the player to understand and inhabit Oedipus, \thegame{}
+will follow him from his childhood in Corinth. The rough outline of the scenes I have
+planned are:
+
+\begin{enumerate}
+\item In Corinth, a short scene of Oedipus' childhood will introduce his disability, his
+  related insecurity, and his temper via a schoolyard scuffle.
+\item As a young adult, a tutorial set in Polybus' court will introduce the game's
+  mechanics; namely facing dilemmas, evaluating options, making choices, and balancing
+  spending \selfcontrol{}.
+\item At a banquet at Corinth, Oedipus will overhear a rumor about his prophecy from a
+  drunk guest. The player will then choose between spending \selfcontrol{} to ignore the
+  rumor and stay in Corinth, or running away to Delphi to confirm the rumor. If the player
+  opts to stay, the game will end with some lines about how, on the one hand, Oedipus has
+  escaped his fate, but on the other hand, there isn't any story to tell. The player will
+  be encouraged to go back and replay, choosing to leave for Delphi.
+\item At Delphi, Oedipus will here the prophecy. Unlike the rest of the game's text, the
+  oracle will speak in verse, possibly using lines taken from Gilbert Murray's 1911
+  translation in rhyming verse. \footnote{The oracle does not deliver the prophecy in
+    \theplay{}, but it contains enough attestations of the prophecy that I think I could
+    piece something together.} No opportunity for player interaction will be provided
+  during this scene.
+\item At the foot of Mount Parnassus, Oedipus will be insulted by a carriage-driver, who
+  will whip at Oedipus' feet to get him to move out of the way. An option will be shown to
+  have Oedipus keep his cool, with a description that calls out how unwise it is to get
+  into fights when one is trying to avoid a prophecy about committing murder, but it will
+  be programmed to require one more \selfcontrol{} than the player has at the moment,
+  regardless of how much they have spent in preceding scenes. The only option actually
+  available to the player will be described simply as \texttt{Lose your cool}, and will
+  describe Oedipus' slaughtering the entire carriage procession.
+\item After Oedipus comes to his senses, the player will be offered a chance, at the cost
+  of \selfcontrol{}, to return to Corinth in spite of the prophecy. This will result in an
+  ending similar to the one if the player stays in Corinth after hearing the
+  rumor. Otherwise, the player will continue on to Thebes.
+\item The player will confront the Sphinx at Thebes. Dialogue attributed to me will call
+  out the Sphinx's tie to Egypt, and invite the player to reflect on it. The player will
+  be shown a text box and asked to type the answer to the Sphix's riddle,
+  \texttt{man}. After each incorrect guess, dialogue attributed to me will offer
+  increasingly obvious hints, including \texttt{Just go Google \enquote{riddle of the
+      sphinx,} okay?}
+\item Joyful citizens of Thebes will crown Oedipus Tyrant of Thebes.
+\item A series of vignettes will show a few years of Oedipus' reign as tyrant, the
+  citizens' satisfaction with his rule, his marriage to Jocasta and the birth of his
+  children.
+\item A final vignette will introduce the plague, and Creon will arrive to inform the
+  player of the curse and the requirements for dispelling it.
+\item Oedipus' investigation will play out non-linearly, with the player choosing the
+  order to investigate various leads. After pursuing a lead, they will be returned to a
+  hub scene set at the palace at Thebes, where they can choose another.
+\item Once the player has accumulated enough \knowledge{} to solve the mystery
+  \footnote{Or, once they have accumulated enough \knowledge{} that they can no longer
+    deny the obvious.}, they will choose between killing themselves, or, at the cost of
+  \selfcontrol{}, putting out their eyes and leaving the city. Players who spend too much
+  \selfcontrol{} during the investigation will have no option but suicide. If the player
+  chooses suicide, the game will end immediately, with no resolution. Otherwise,
+  \thegame{} will end the same way as \theplay{}.
+\end{enumerate}
+

@@ -1,6 +1,6 @@
 TeX ?= xelatex -interaction=nonstopmode
 MYNAME ?= Phoebe_Goldman
-ASSIGNMENT ?= FIXME_ASSIGNMENT_NAME
+ASSIGNMENT ?= HEL-UA-140_Final_Oedipus_Text_Proposal
 JOBNAME := $(MYNAME)_$(ASSIGNMENT)
 
 $(JOBNAME).pdf: main.tex *.tex bib.bib

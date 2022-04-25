@@ -28,8 +28,8 @@
 \lhead{\theauthor}
 \pagestyle{fancy}
 
-\usepackage{sectsty}
-\allsectionsfont{\normalsize\mdseries}
+%\usepackage{sectsty}
+%\allsectionsfont{\normalsize\mdseries}
 
 \usepackage{setspace}
 \doublespacing{}
@@ -46,19 +46,25 @@ ibidtracker=true,
 \usepackage{attrib}
 \addbibresource{bib.bib}
 
+%% footnotes in boxes
+\makeatletter
+% Default:
+% \def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}
+\renewcommand{\@makefnmark}{\makebox{\normalfont[\@thefnmark]}}
+\makeatother
+
 \begin{document}
-
+%
 % don't hyphenate or fill lines
-\raggedright
-
+\raggedright%
+%
 % MLA indent is half an inch. this goes after \raggedright because \raggedright alters it.
-\setlength{\parindent}{0.5in}
-
+\setlength{\parindent}{0.5in}%
+%
 % no header on first page
-\thispagestyle{plain}
-
+\thispagestyle{plain}%
+%
 \mlatitle{}
-
 % MLA indents the first paragraph
 \indent
 \input{paper.tex}
