@@ -9,13 +9,14 @@
 
 \input{titleinfo.tex}
 
-\newcommand{\mlatitle}{\noindent\theauthor{}\hspace*{2cm}
-\\\noindent\theprof{}\hspace*{2cm}
-\\\noindent\theclass{}\hspace*{2cm}
-\\\noindent\thedate{}\hspace*{2cm}
-\begin{center}
-\thetitle{}
-\end{center}}
+\newcommand{\mlatitle}{%
+  \noindent\theauthor{}\hspace*{2cm}\\
+  \noindent\theprof{}\hspace*{2cm}\\
+  \noindent\theclass{}\hspace*{2cm}\\
+  \noindent\thedate{}\hspace*{2cm}
+  \begin{center}
+    \thetitle{}
+  \end{center}}
 
 \usepackage[margin=1in, headheight=14.5pt]{geometry}
 
@@ -34,14 +35,21 @@
 \usepackage{setspace}
 \doublespacing{}
 
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  linkcolor=Sepia,
+  citecolor=MidnightBlue,
+  urlcolor=BlueViolet,
+}
 
 %% bibliography stuff
 \usepackage[
-style=authortitle-terse,
-backend=biber,
-idemtracker=true,
-ibidtracker=true,
+  style=authortitle-ibid,
+  backend=biber,
+  idemtracker=true,
+  ibidtracker=true,
 ]{biblatex}
 \usepackage{attrib}
 \addbibresource{bib.bib}
